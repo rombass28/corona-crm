@@ -1,0 +1,17 @@
+header{
+    background-color: black;
+    color: red;
+}
+aside{
+    background-color: lightgray;
+}
+aside button{
+    margin-left: 42%;
+    color: blue;
+    border: 1px solid blue;
+    background-color: lightgray;
+}
+.deleteButton{
+    color: red;
+}
+
