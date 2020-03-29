@@ -10,126 +10,126 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-  <div>
-    
+  <div class="container-fluid">
+    <header class="row pl-3">
+      <h1>Corona CRM</h1>
+  </header>
+  <div class="row">
+      <aside class="col-sm-12 col-lg-3">
+          <div class=" createCustomer pl-3">
+            <div>
+              <h5 class="p-3">
+                <i class="fas fa-user"></i><i class="fas fa-plus"></i>
+                Create new customer</h5>
+            </div>
+              <form>
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label" aria-label="Name">Full name</label>
+                  <div class="col-sm-8">
+                    <input class="form-control" placeholder="Enter name...">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label" aria-label="Email">Email</label>
+                  <div class="col-sm-8">
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label" aria-label="Birthdate">Birth date</label>
+                  <div class="col-sm-8">
+                    <input type="date" id="birthday" name="birthday"> 
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label" aria-label="Notes">Notes...</label>
+                  <div class="col-sm-8">
+                    <textarea class="form-control" placeholder="Enter your notes..." aria-label="With textarea"></textarea>
+                  </div>
+                </div>
+                <div class="row row-space d-flex justify-content-center mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="">
+                    <label class="form-check-label">
+                      Over 18 years old?
+                    </label>
+                  </div>
+                </div>
+                <div class="row row-space d-flex justify-content-center mb-3">
+                  <div>
+                    <button>Create</button>
+                </div>
+                </div>
+              </form>
+          <!-- </div>
+          <div class="costumerDetails">
+            <p>Full name</p><input type="text" placeholder="Enter name" />
+            <p>Email</p><input type="text" placeholder="Enter email" /> 
+            <p>Birth date</p><input type="date" id="birthday" name="birthday"> 
+            <p>Notes</p><input type="text" placeholder="Enter your notes..." />
+            <input class="inputAside" type="text"><p class="asideAge">Over 18 years old?</p>
+            <button>Create</button>
+          </div> -->
+      </aside>
+      <main class="col-sm-12 col-lg-9">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Full name</th>
+                  <th scope="col">Email address</th>
+                  <th scope="col">Birthdate</th>
+                  <th scope="col">Created on</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark Otto</td>
+                  <td>Ottoson@gmail.com</td>
+                  <td>23/11/1978</td>
+                  <td>15/3/2020</td>
+                  <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob Thornton</td>
+                  <td>thornton@hotmail.com</td>
+                  <td>23/12/1981</td>
+                  <td>15/3/2020</td>
+                  <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry the Bird</td>
+                  <td>thebird@gmail.com</td>
+                  <td>12/10/1994</td>
+                  <td>15/3/2020</td>
+                  <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Ameliya George</td>
+                  <td>ameliya.b@gmail.com</td>
+                  <td>12/10/1968</td>
+                  <td>15/3/2020</td>
+                  <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>Matt thornee</td>
+                  <td>matthedemon@gmail.com</td>
+                  <td>12/10/1956</td>
+                  <td>15/3/2020</td>
+                  <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
+                </tr>
+              </tbody>
+            </table>
+      </main>
   </div>
-    <header class="pl-3">
-        <h1>Corona CRM</h1>
-    </header>
-    <div class="row">
-        <aside class="col-sm-12 col-lg-3">
-            <div class=" createCustomer pl-3">
-              <div>
-                <h5 class="p-3">
-                  <i class="fas fa-user"></i><i class="fas fa-plus"></i>
-                  Create new customer</h5>
-              </div>
-                <form>
-                  <div class="form-group row">
-                    <label class="col-sm-4 col-form-label" aria-label="Name">Full name</label>
-                    <div class="col-sm-8">
-                      <input class="form-control" placeholder="Enter name...">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-4 col-form-label" aria-label="Email">Email</label>
-                    <div class="col-sm-8">
-                      <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-4 col-form-label" aria-label="Birthdate">Birth date</label>
-                    <div class="col-sm-8">
-                      <input type="date" id="birthday" name="birthday"> 
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-4 col-form-label" aria-label="Notes">Notes...</label>
-                    <div class="col-sm-8">
-                      <textarea class="form-control" placeholder="Enter your notes..." aria-label="With textarea"></textarea>
-                    </div>
-                  </div>
-                  <div class="row row-space d-flex justify-content-center mb-3">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="">
-                      <label class="form-check-label">
-                        Over 18 years old?
-                      </label>
-                    </div>
-                  </div>
-                  <div class="row row-space d-flex justify-content-center mb-3">
-                    <div>
-                      <button>Create</button>
-                  </div>
-                  </div>
-                </form>
-            <!-- </div>
-            <div class="costumerDetails">
-              <p>Full name</p><input type="text" placeholder="Enter name" />
-              <p>Email</p><input type="text" placeholder="Enter email" /> 
-              <p>Birth date</p><input type="date" id="birthday" name="birthday"> 
-              <p>Notes</p><input type="text" placeholder="Enter your notes..." />
-              <input class="inputAside" type="text"><p class="asideAge">Over 18 years old?</p>
-              <button>Create</button>
-            </div> -->
-        </aside>
-        <main class="col-sm-12 col-lg-9">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Full name</th>
-                    <th scope="col">Email address</th>
-                    <th scope="col">Birthdate</th>
-                    <th scope="col">Created on</th>
-                    <th scope="col">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark Otto</td>
-                    <td>Ottoson@gmail.com</td>
-                    <td>23/11/1978</td>
-                    <td>15/3/2020</td>
-                    <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob Thornton</td>
-                    <td>thornton@hotmail.com</td>
-                    <td>23/12/1981</td>
-                    <td>15/3/2020</td>
-                    <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry the Bird</td>
-                    <td>thebird@gmail.com</td>
-                    <td>12/10/1994</td>
-                    <td>15/3/2020</td>
-                    <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Ameliya George</td>
-                    <td>ameliya.b@gmail.com</td>
-                    <td>12/10/1968</td>
-                    <td>15/3/2020</td>
-                    <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Matt thornee</td>
-                    <td>matthedemon@gmail.com</td>
-                    <td>12/10/1956</td>
-                    <td>15/3/2020</td>
-                    <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
-                  </tr>
-                </tbody>
-              </table>
-        </main>
-    </div>
+  </div>
+    
 
 
 </body>

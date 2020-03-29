@@ -20,7 +20,7 @@ app.listen(port, () => {
 
 app.put('/customer', (req, res) => {
     customers.push({
-		id: customer.length + 1,
+		id: customers.length + 1,
 		name: req.body.name,
         email: req.body.email,
 		birthdate: req.body.birthdate,
