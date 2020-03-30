@@ -21,7 +21,7 @@ app.listen(port, () => {
 app.put('/customer', (req, res) => {
     customers.push({
 		id: customers.length + 1,
-		name: req.body.name,
+		fullName: req.body.fullName,
         email: req.body.email,
 		birthdate: req.body.birthdate,
         notes: req.body.notes,
@@ -47,7 +47,7 @@ app.get('/customer/:id', (req, res) => {
 
 
 app.post('/customer/:id', (req, res) => {
-    const requestCustomer = customers.find(user => {
+    const requestCustomer = customers.find(customer => {
         return customer.id === parseInt(req.params.id);
     });
     if(!requestCustomer){
@@ -57,7 +57,6 @@ app.post('/customer/:id', (req, res) => {
     res.status(200).send();
 });
 
-//BEST WAY TO DO THE APP.DELETE
 app.delete('/customer/:id', (req, res) => {
 	const requestCustomer = customers.find(customer => {
 		return customer.id === parseInt(req.params.id);

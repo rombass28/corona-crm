@@ -22,34 +22,34 @@
                 <i class="fas fa-user"></i><i class="fas fa-plus"></i>
                 Create new customer</h5>
             </div>
-              <form>
+              <form id="new-customer-form">
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label" aria-label="Name">Full name</label>
                   <div class="col-sm-8">
-                    <input class="form-control" placeholder="Enter name...">
+                    <input class="form-control" name="fullName" placeholder="Enter name...">
                   </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label" aria-label="Email">Email</label>
                   <div class="col-sm-8">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control" name="email" placeholder="Email">
                   </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label" aria-label="Birthdate">Birth date</label>
                   <div class="col-sm-8">
-                    <input type="date" id="birthday" name="birthday"> 
+                    <input type="date" id="birthday" name="birthdate"> 
                   </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label" aria-label="Notes">Notes...</label>
                   <div class="col-sm-8">
-                    <textarea class="form-control" placeholder="Enter your notes..." aria-label="With textarea"></textarea>
+                    <textarea class="form-control" name="notes" placeholder="Enter your notes..." aria-label="With textarea"></textarea>
                   </div>
                 </div>
                 <div class="row row-space d-flex justify-content-center mb-3">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="">
+                    <input class="form-check-input" name="over18" type="checkbox" value="">
                     <label class="form-check-label">
                       Over 18 years old?
                     </label>
@@ -61,15 +61,6 @@
                 </div>
                 </div>
               </form>
-          <!-- </div>
-          <div class="costumerDetails">
-            <p>Full name</p><input type="text" placeholder="Enter name" />
-            <p>Email</p><input type="text" placeholder="Enter email" /> 
-            <p>Birth date</p><input type="date" id="birthday" name="birthday"> 
-            <p>Notes</p><input type="text" placeholder="Enter your notes..." />
-            <input class="inputAside" type="text"><p class="asideAge">Over 18 years old?</p>
-            <button>Create</button>
-          </div> -->
       </aside>
       <main class="col-sm-12 col-lg-9">
           <table class="table">
@@ -129,8 +120,6 @@
       </main>
   </div>
   </div>
-    
-
-
+    <script src="scripts.js"></script>
 </body>
 </html>
