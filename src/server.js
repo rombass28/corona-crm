@@ -19,6 +19,11 @@ app.listen(port, () => {
 
 
 app.put('/customer', (req, res) => {
+    const fullName = req.body.fullName;
+	const email = req.body.email;
+	if (!fullName.match(/^[a-zA-Z ]*$/) || fullName.split(' ').length < 2 || !email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+		return res.status(400).send();
+	}
     customers.push({
 		id: customers.length + 1,
 		fullName: req.body.fullName,
@@ -54,6 +59,12 @@ app.post('/customer/:id', (req, res) => {
         res.status(404).send();
         return;
     }
+    const index = customers.indexOf(requestedCustomer);
+	customers[index] = {
+		fullName: req.body.fullName,
+		email: req.body.email,
+	};
+	res.json(customers[index]);
     res.status(200).send();
 });
 
