@@ -3,13 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Corona CRM</title>
     <script src="https://kit.fontawesome.com/f1eb5cf7f9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+  <div class="backdrop" id="modal">
+    <div class="modal-box">
+        <button class="btn" id="close-modal">x</button>
+        <h2 class="h5 sidebar-title">
+            <i class="fas fa-user"></i>
+            Edit customer
+        </h2>
+        <form id="edit-customer-form">
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label" aria-label="Name">Full name</label>
+            <div class="col-sm-8">
+              <input class="form-control" name="fullName" placeholder="Enter name...">
+              <div class="invalid-feedback">Full name is invalid</div>
+            </div>
+          </div>
+          <div id="fullNameError" ></div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label" aria-label="Email">Email</label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control" name="email" placeholder="Email">
+              <div class="invalid-feedback">Email is invalid</div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label" aria-label="Birthdate">Birth date</label>
+            <div class="col-sm-8">
+              <input type="date" id="birthday" name="birthdate"> 
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label" aria-label="Notes">Notes...</label>
+            <div class="col-sm-8">
+              <textarea class="form-control" name="notes" placeholder="Enter your notes..." aria-label="With textarea"></textarea>
+            </div>
+          </div>
+          <div class="row row-space d-flex justify-content-center mb-3">
+            <div class="form-check">
+              <input class="form-check-input" name="over18" type="checkbox" value="">
+              <label for="over18_2" class="form-check-label">
+                Over 18 years old?
+              </label>
+              <div class="invalid-feedback">You must check this</div>
+            </div>
+          </div>
+          <!-- <div id="eighteenError" ></div> -->
+          <div class="row row-space d-flex justify-content-center mb-3" id="btn-edit-customer">
+            <div>
+              <button class="btn btn-outline-primary btn-sm" id="btn-edit-customer">Save</button>          </div>
+          </div>
+        </form>
+    </div>
+</div>
+
   <div class="container-fluid">
     <header class="row pl-3">
       <h1>Corona CRM</h1>
@@ -52,16 +105,15 @@
                 <div class="row row-space d-flex justify-content-center mb-3">
                   <div class="form-check">
                     <input class="form-check-input" name="over18" type="checkbox" value="">
-                    <label class="form-check-label">
+                    <label for="over18" class="form-check-label">
                       Over 18 years old?
                     </label>
                   </div>
                 </div>
-                <div id="eighteeenError" ></div>
+                <div id="eighteenError" ></div>
                 <div class="row row-space d-flex justify-content-center mb-3">
                   <div>
-                    <button>Create</button>
-                </div>
+                    <button class="btn btn-outline-primary btn-sm" id="btn-create-customer">Create</button>                </div>
                 </div>
               </form>
       </aside>
@@ -77,52 +129,13 @@
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark Otto</td>
-                  <td>Ottoson@gmail.com</td>
-                  <td>23/11/1978</td>
-                  <td>15/3/2020</td>
-                  <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob Thornton</td>
-                  <td>thornton@hotmail.com</td>
-                  <td>23/12/1981</td>
-                  <td>15/3/2020</td>
-                  <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry the Bird</td>
-                  <td>thebird@gmail.com</td>
-                  <td>12/10/1994</td>
-                  <td>15/3/2020</td>
-                  <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Ameliya George</td>
-                  <td>ameliya.b@gmail.com</td>
-                  <td>12/10/1968</td>
-                  <td>15/3/2020</td>
-                  <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Matt thornee</td>
-                  <td>matthedemon@gmail.com</td>
-                  <td>12/10/1956</td>
-                  <td>15/3/2020</td>
-                  <td><i class="fas fa-edit pl-3"></i> <i class="far fa-trash-alt deleteButton pl-3"></i></td> 
-                </tr>
-              </tbody>
+              <tbody id="customer-list"></tbody>
             </table>
       </main>
   </div>
   </div>
     <script src="scripts.js"></script>
+    <script src="validation.js"></script>
+    <script src="modal.js"></script>
 </body>
 </html>
