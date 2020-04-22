@@ -4,6 +4,7 @@ header{
 }
 aside{
     background-color: lightgray;
+    min-height: 100vh;
 }
 aside button{
     margin-left: 42%;
@@ -11,7 +12,7 @@ aside button{
     border: 1px solid blue;
     background-color: lightgray;
 }
-.deleteButton{
+.btn.btn-delete{
     color: red;
 }
 
